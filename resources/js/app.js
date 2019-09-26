@@ -26,7 +26,7 @@ Vue.use(mdbvue)*/
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('flash', require('./components/FlashComponent.vue').default);
+Vue.component('flash2', require('./components/FlashComponent.vue').default);
 Vue.component('ddd', require('./components/ArticleComponent.vue').default);
 
 /**

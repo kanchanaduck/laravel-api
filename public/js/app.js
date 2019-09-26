@@ -2488,6 +2488,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Tables',
@@ -2497,11 +2517,21 @@ __webpack_require__.r(__webpack_exports__);
     mdbCard: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbCard"],
     mdbView: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbView"],
     mdbCardBody: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbCardBody"],
-    mdbTbl: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbTbl"]
+    mdbTbl: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbTbl"],
+    mdbBtn: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbBtn"],
+    mdbContainer: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbContainer"],
+    mdbIcon: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbIcon"],
+    mdbModal: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbModal"],
+    mdbModalHeader: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbModalHeader"],
+    mdbModalBody: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbModalBody"],
+    mdbModalFooter: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbModalFooter"],
+    mdbInput: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbInput"],
+    mdbModalTitle: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbModalTitle"]
   },
   data: function data() {
     return {
-      info: null
+      info: null,
+      login: false
     };
   },
   mounted: function mounted() {
@@ -2577,52 +2607,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Tables',
+  name: 'ModalExamplesPage',
   components: {
-    mdbRow: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbRow"],
-    mdbCol: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbCol"],
-    mdbCard: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbCard"],
-    mdbView: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbView"],
-    mdbCardBody: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbCardBody"],
-    mdbTbl: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbTbl"]
+    mdbContainer: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbContainer"],
+    mdbBtn: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbBtn"],
+    mdbModal: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbModal"],
+    mdbModalHeader: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbModalHeader"],
+    mdbModalBody: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbModalBody"],
+    mdbModalFooter: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbModalFooter"],
+    mdbInput: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbInput"],
+    mdbModalTitle: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbModalTitle"],
+    mdbIcon: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbIcon"]
   },
   data: function data() {
-    return {};
+    return {
+      login: false
+    };
   }
 });
 
@@ -94516,6 +94518,99 @@ var render = function() {
     { attrs: { id: "tables" } },
     [
       _c(
+        "div",
+        [
+          _c(
+            "mdb-btn",
+            {
+              attrs: { color: "default", rounded: "" },
+              nativeOn: {
+                click: function($event) {
+                  _vm.login = true
+                }
+              }
+            },
+            [
+              _vm._v("Add "),
+              _c("mdb-icon", { staticClass: "ml-1", attrs: { icon: "plus" } })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "mdb-modal",
+            {
+              attrs: { show: _vm.login },
+              on: {
+                close: function($event) {
+                  _vm.login = false
+                }
+              }
+            },
+            [
+              _c(
+                "mdb-modal-header",
+                { staticClass: "text-center" },
+                [
+                  _c(
+                    "mdb-modal-title",
+                    { staticClass: "w-100", attrs: { tag: "h4", bold: "" } },
+                    [_vm._v("Sign in")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "mdb-modal-body",
+                { staticClass: "mx-3 grey-text" },
+                [
+                  _c("mdb-input", {
+                    staticClass: "mb-5",
+                    attrs: {
+                      label: "Your email",
+                      icon: "envelope",
+                      type: "email"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("mdb-input", {
+                    attrs: {
+                      label: "Your password",
+                      icon: "lock",
+                      type: "password"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "mdb-modal-footer",
+                { attrs: { center: "" } },
+                [
+                  _c(
+                    "mdb-btn",
+                    {
+                      nativeOn: {
+                        click: function($event) {
+                          _vm.login = false
+                        }
+                      }
+                    },
+                    [_vm._v("Login")]
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
         "mdb-row",
         [
           _c(
@@ -94549,7 +94644,10 @@ var render = function() {
                         _c("thead", [
                           _c("tr", [
                             _c("th", [_vm._v("#")]),
-                            _c("th", [_vm._v("Title")])
+                            _vm._v(" "),
+                            _c("th", [_vm._v("Title")]),
+                            _vm._v(" "),
+                            _c("th", [_vm._v("Manage")])
                           ])
                         ]),
                         _vm._v(" "),
@@ -94561,7 +94659,22 @@ var render = function() {
                                 _vm._v(_vm._s(c.id))
                               ]),
                               _vm._v(" "),
-                              _c("td", [_vm._v(_vm._s(c.title))])
+                              _c("td", [_vm._v(_vm._s(c.title))]),
+                              _vm._v(" "),
+                              _c("td", [
+                                _c(
+                                  "a",
+                                  { attrs: { href: "api/articles" } },
+                                  [
+                                    _c("mdb-icon", {
+                                      staticClass: "ml-1",
+                                      attrs: { icon: "edit" }
+                                    }),
+                                    _vm._v(_vm._s(c.id))
+                                  ],
+                                  1
+                                )
+                              ])
                             ])
                           }),
                           0
@@ -94653,212 +94766,83 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "section",
-    { attrs: { id: "tables" } },
+    "mdb-container",
     [
       _c(
-        "mdb-row",
+        "mdb-btn",
+        {
+          attrs: { color: "default" },
+          nativeOn: {
+            click: function($event) {
+              _vm.login = true
+            }
+          }
+        },
+        [
+          _vm._v("launch login modal "),
+          _c("mdb-icon", { staticClass: "ml-1", attrs: { icon: "eye" } })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "mdb-modal",
+        {
+          attrs: { show: _vm.login },
+          on: {
+            close: function($event) {
+              _vm.login = false
+            }
+          }
+        },
         [
           _c(
-            "mdb-col",
-            { attrs: { md: "12" } },
+            "mdb-modal-header",
+            { staticClass: "text-center" },
             [
               _c(
-                "mdb-card",
-                { staticClass: "mt-5", attrs: { cascade: "", narrow: "" } },
-                [
-                  _c(
-                    "mdb-view",
-                    { staticClass: "gradient-card-header blue darken-2" },
-                    [
-                      _c("h4", { staticClass: "h4-responsive text-white" }, [
-                        _vm._v("Basic tables")
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "mdb-card-body",
-                    [
-                      _c("h3", { staticClass: "mt-5 text-left" }, [
-                        _c("strong", [_vm._v("Basic examples")])
-                      ]),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          "Using the most basic table markup, here’s how .table-based tables look in Bootstrap. All table styles are inherited in Bootstrap 4, meaning any nested tables will be styled in the same manner as the parent."
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("mdb-tbl", [
-                        _c("thead", [
-                          _c("tr", [
-                            _c("th", [_vm._v("#")]),
-                            _c("th", [_vm._v("First Name")]),
-                            _c("th", [_vm._v("Last Name")]),
-                            _c("th", [_vm._v("Username")])
-                          ])
-                        ]),
-                        _c("tbody", [
-                          _c("tr", [
-                            _c("th", { attrs: { scope: "row" } }, [
-                              _vm._v("1")
-                            ]),
-                            _c("td", [_vm._v("Mark")]),
-                            _c("td", [_vm._v("Otto")]),
-                            _c("td", [_vm._v("@mdo")])
-                          ]),
-                          _c("tr", [
-                            _c("th", { attrs: { scope: "row" } }, [
-                              _vm._v("2")
-                            ]),
-                            _c("td", [_vm._v("Jacob")]),
-                            _c("td", [_vm._v("Thornton")]),
-                            _c("td", [_vm._v("@fat")])
-                          ]),
-                          _c("tr", [
-                            _c("th", { attrs: { scope: "row" } }, [
-                              _vm._v("3")
-                            ]),
-                            _c("td", [_vm._v("Larry")]),
-                            _c("td", [_vm._v("the Bird")]),
-                            _c("td", [_vm._v("@twitter")])
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("h3", { staticClass: "mt-5 text-left" }, [
-                        _c("strong", [_vm._v("Table head options")])
-                      ]),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          "To change a background-color of thead (or any other element) use our color classes. If you are going to use a dark background you should also consider white text (to provide a proper contrast) by adding .text-white class. "
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("mdb-tbl", [
-                        _c("thead", { staticClass: "blue-grey lighten-4" }, [
-                          _c("tr", [
-                            _c("th", [_vm._v("#")]),
-                            _c("th", [_vm._v("First Name")]),
-                            _c("th", [_vm._v("Last Name")]),
-                            _c("th", [_vm._v("Username")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("tbody", [
-                          _c("tr", [
-                            _c("th", { attrs: { scope: "row" } }, [
-                              _vm._v("1")
-                            ]),
-                            _c("td", [_vm._v("Mark")]),
-                            _c("td", [_vm._v("Otto")]),
-                            _c("td", [_vm._v("@mdo")])
-                          ]),
-                          _c("tr", [
-                            _c("th", { attrs: { scope: "row" } }, [
-                              _vm._v("2")
-                            ]),
-                            _c("td", [_vm._v("Jacob")]),
-                            _c("td", [_vm._v("Thornton")]),
-                            _c("td", [_vm._v("@fat")])
-                          ]),
-                          _c("tr", [
-                            _c("th", { attrs: { scope: "row" } }, [
-                              _vm._v("3")
-                            ]),
-                            _c("td", [_vm._v("Larry")]),
-                            _c("td", [_vm._v("the Bird")]),
-                            _c("td", [_vm._v("@twitter")])
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("mdb-tbl", [
-                        _c("thead", { staticClass: "mdb-color darken-3" }, [
-                          _c("tr", { staticClass: "text-white" }, [
-                            _c("th", [_vm._v("#")]),
-                            _c("th", [_vm._v("First Name")]),
-                            _c("th", [_vm._v("Last Name")]),
-                            _c("th", [_vm._v("Username")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("tbody", [
-                          _c("tr", [
-                            _c("th", { attrs: { scope: "row" } }, [
-                              _vm._v("1")
-                            ]),
-                            _c("td", [_vm._v("Mark")]),
-                            _c("td", [_vm._v("Otto")]),
-                            _c("td", [_vm._v("@mdo")])
-                          ]),
-                          _c("tr", [
-                            _c("th", { attrs: { scope: "row" } }, [
-                              _vm._v("2")
-                            ]),
-                            _c("td", [_vm._v("Jacob")]),
-                            _c("td", [_vm._v("Thornton")]),
-                            _c("td", [_vm._v("@fat")])
-                          ]),
-                          _c("tr", [
-                            _c("th", { attrs: { scope: "row" } }, [
-                              _vm._v("3")
-                            ]),
-                            _c("td", [_vm._v("Larry")]),
-                            _c("td", [_vm._v("the Bird")]),
-                            _c("td", [_vm._v("@twitter")])
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("h3", { staticClass: "mt-5 text-left" }, [
-                        _c("strong", [_vm._v("Striped rows:")])
-                      ]),
-                      _vm._v(" "),
-                      _c("table", { staticClass: "table table-striped" }, [
-                        _c("thead", [
-                          _c("tr", [
-                            _c("th", [_vm._v("#")]),
-                            _c("th", [_vm._v("First Name")]),
-                            _c("th", [_vm._v("Last Name")]),
-                            _c("th", [_vm._v("Username")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("tbody", [
-                          _c("tr", [
-                            _c("th", { attrs: { scope: "row" } }, [
-                              _vm._v("1")
-                            ]),
-                            _c("td", [_vm._v("Mark")]),
-                            _c("td", [_vm._v("Otto")]),
-                            _c("td", [_vm._v("@mdo")])
-                          ]),
-                          _c("tr", [
-                            _c("th", { attrs: { scope: "row" } }, [
-                              _vm._v("2")
-                            ]),
-                            _c("td", [_vm._v("Jacob")]),
-                            _c("td", [_vm._v("Thornton")]),
-                            _c("td", [_vm._v("@fat")])
-                          ]),
-                          _c("tr", [
-                            _c("th", { attrs: { scope: "row" } }, [
-                              _vm._v("3")
-                            ]),
-                            _c("td", [_vm._v("Larry")]),
-                            _c("td", [_vm._v("the Bird")]),
-                            _c("td", [_vm._v("@twitter")])
-                          ])
-                        ])
-                      ])
-                    ],
-                    1
-                  )
-                ],
-                1
+                "mdb-modal-title",
+                { staticClass: "w-100", attrs: { tag: "h4", bold: "" } },
+                [_vm._v("Sign in")]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "mdb-modal-body",
+            { staticClass: "mx-3 grey-text" },
+            [
+              _c("mdb-input", {
+                staticClass: "mb-5",
+                attrs: { label: "Your email", icon: "envelope", type: "email" }
+              }),
+              _vm._v(" "),
+              _c("mdb-input", {
+                attrs: {
+                  label: "Your password",
+                  icon: "lock",
+                  type: "password"
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "mdb-modal-footer",
+            { attrs: { center: "" } },
+            [
+              _c(
+                "mdb-btn",
+                {
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.login = false
+                    }
+                  }
+                },
+                [_vm._v("Login")]
               )
             ],
             1
@@ -108499,7 +108483,7 @@ Vue.use(mdbvue)*/
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
-Vue.component('flash', __webpack_require__(/*! ./components/FlashComponent.vue */ "./resources/js/components/FlashComponent.vue")["default"]);
+Vue.component('flash2', __webpack_require__(/*! ./components/FlashComponent.vue */ "./resources/js/components/FlashComponent.vue")["default"]);
 Vue.component('ddd', __webpack_require__(/*! ./components/ArticleComponent.vue */ "./resources/js/components/ArticleComponent.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to

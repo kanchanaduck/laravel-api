@@ -9,17 +9,23 @@ use App\Article;
 class ArticleController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    /* public function __construct()
+    {
+        $this->middleware('auth');
+    } */
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        /* $student = Article::all();
-        return response()->json($student); */
-
-        $articles = Article::get()->toJson(JSON_PRETTY_PRINT);
-        return response($articles, 200);
+        $articles = Article::all();
+        return response()->json($articles);
     }
 
     /**
@@ -61,7 +67,7 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        if (Article::where('id', $id)->exists()) {
+        /* if (Article::where('id', $id)->exists()) {
             $student = Article::where('id', $id)->get();
             return response()->json($student);
         } 
@@ -69,7 +75,9 @@ class ArticleController extends Controller
             return response()->json([
               "message" => "article not found"
             ], 404);
-        }
+        } */
+        $article = Article::findOrFail($id);
+        return response()->json($article);
     }
 
     /**

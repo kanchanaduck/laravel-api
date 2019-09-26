@@ -26,5 +26,5 @@
  @extends('layouts.app')
 
 @section('content')
-    <flash></flash>
+    <flash2></flash2>
 @endsection

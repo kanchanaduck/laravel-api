@@ -1,72 +1,43 @@
+
 <template>
-  <section id="tables">
-    <mdb-row>
-      <mdb-col md="12">
-        <mdb-card cascade narrow class="mt-5">
-          <mdb-view class="gradient-card-header blue darken-2">
-            <h4 class="h4-responsive text-white">Basic tables</h4>
-          </mdb-view>
-          <mdb-card-body>
-            <h3 class="mt-5 text-left"><strong>Basic examples</strong></h3>
-            <p>Using the most basic table markup, here’s how .table-based tables look in Bootstrap. All table styles are inherited in Bootstrap 4, meaning any nested tables will be styled in the same manner as the parent.</p>
-            <mdb-tbl>
-              <thead>
-                <tr><th>#</th><th>First Name</th><th>Last Name</th><th>Username</th></tr>
-              </thead><tbody>
-                <tr><th scope="row">1</th><td>Mark</td><td>Otto</td><td>@mdo</td></tr><tr><th scope="row">2</th><td>Jacob</td><td>Thornton</td><td>@fat</td></tr><tr><th scope="row">3</th><td>Larry</td><td>the Bird</td><td>@twitter</td></tr>
-              </tbody>
-            </mdb-tbl>
-            <h3 class="mt-5 text-left"><strong>Table head options</strong></h3>
-            <p>To change a background-color of thead (or any other element) use our color classes. If you are going to use a dark background you should also consider white text (to provide a proper contrast) by adding .text-white class. </p>
-            <mdb-tbl>
-              <thead class="blue-grey lighten-4">
-                <tr><th>#</th><th>First Name</th><th>Last Name</th><th>Username</th></tr>
-              </thead>
-              <tbody>
-                <tr><th scope="row">1</th><td>Mark</td><td>Otto</td><td>@mdo</td></tr><tr><th scope="row">2</th><td>Jacob</td><td>Thornton</td><td>@fat</td></tr><tr><th scope="row">3</th><td>Larry</td><td>the Bird</td><td>@twitter</td></tr>
-              </tbody>
-            </mdb-tbl>
-            <mdb-tbl>
-              <thead class="mdb-color darken-3">
-                <tr class="text-white"><th>#</th><th>First Name</th><th>Last Name</th><th>Username</th></tr>
-              </thead>
-              <tbody>
-                <tr><th scope="row">1</th><td>Mark</td><td>Otto</td><td>@mdo</td></tr><tr><th scope="row">2</th><td>Jacob</td><td>Thornton</td><td>@fat</td></tr><tr><th scope="row">3</th><td>Larry</td><td>the Bird</td><td>@twitter</td></tr>
-              </tbody>
-            </mdb-tbl>
-            <h3 class="mt-5 text-left"><strong>Striped rows:</strong></h3>
-            <table class="table table-striped">
-              <thead>
-                <tr><th>#</th><th>First Name</th><th>Last Name</th><th>Username</th></tr>
-              </thead>
-              <tbody>
-                <tr><th scope="row">1</th><td>Mark</td><td>Otto</td><td>@mdo</td></tr><tr><th scope="row">2</th><td>Jacob</td><td>Thornton</td><td>@fat</td></tr><tr><th scope="row">3</th><td>Larry</td><td>the Bird</td><td>@twitter</td></tr>
-              </tbody>
-            </table>
-          </mdb-card-body>
-        </mdb-card>
-      </mdb-col>
-    </mdb-row>
-  </section>
+  <mdb-container>
+    <mdb-btn color="default" @click.native="login=true">launch login modal <mdb-icon icon="eye" class="ml-1"/></mdb-btn>
+    <mdb-modal :show="login" @close="login = false">
+      <mdb-modal-header class="text-center">
+        <mdb-modal-title tag="h4" bold class="w-100">Sign in</mdb-modal-title>
+      </mdb-modal-header>
+      <mdb-modal-body class="mx-3 grey-text">
+        <mdb-input label="Your email" icon="envelope" type="email" class="mb-5"/>
+        <mdb-input label="Your password" icon="lock" type="password"/>
+      </mdb-modal-body>
+      <mdb-modal-footer center>
+        <mdb-btn @click.native="login = false">Login</mdb-btn>
+      </mdb-modal-footer>
+    </mdb-modal>
+  </mdb-container>
 </template>
 
 <script>
-import { mdbRow, mdbCol, mdbCard, mdbView, mdbCardBody, mdbTbl } from 'mdbvue'
-
-export default {
-  name: 'Tables',
-  components: {
-    mdbRow,
-    mdbCol,
-    mdbCard,
-    mdbView,
-    mdbCardBody,
-    mdbTbl
-  },
-  data () {
-    return {}
+  import { mdbContainer, mdbBtn, mdbIcon, mdbModal, mdbModalHeader, mdbModalBody, mdbModalFooter, mdbInput, mdbModalTitle } from 'mdbvue';
+  export default {
+    name: 'ModalExamplesPage',
+    components: {
+      mdbContainer,
+      mdbBtn,
+      mdbModal,
+      mdbModalHeader,
+      mdbModalBody,
+      mdbModalFooter,
+      mdbInput,
+      mdbModalTitle,
+      mdbIcon
+    },
+    data() {
+      return {
+        login: false
+      }
+    }
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
