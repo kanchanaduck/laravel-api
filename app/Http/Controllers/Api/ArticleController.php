@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Article;
+use DB;
 
 class ArticleController extends Controller
 {
@@ -111,6 +112,7 @@ class ArticleController extends Controller
              'message' => 'Great success! Task updated',
              'article' => $student
          ]); */
+         DB::enableQueryLog();
          if (Article::where('id', $id)->exists()) {
             $article = Article::find($id);
             $article->title = is_null($request->title ) ? $student->title  : $request->title;
@@ -118,7 +120,8 @@ class ArticleController extends Controller
             $article->save();
     
             return response()->json([
-                "message" => "records updated successfully"
+                "message" => "records updated successfully",
+                "data" => DB::getQueryLog(),
             ], 200);
             } else {
             return response()->json([
@@ -142,7 +145,7 @@ class ArticleController extends Controller
     
             return response()->json([
               "message" => "records deleted"
-            ], 202);
+            ], 204);
           } else {
             return response()->json([
               "message" => "Student not found"

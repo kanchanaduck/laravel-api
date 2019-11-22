@@ -30,15 +30,14 @@ class MailNotify extends Mailable
     {
         $address = 'intranet@hitachi-hitt.com';
         $subject = 'This is a demo!';
-        $name = 'Jane Doe';
+        $name = 'INTRANET';
         
         return $this->view('mail')
                     ->from($address, $name)
-                    ->cc($address, $name)
-                    ->bcc($address, $name)
-                    ->replyTo($address, $name)
                     ->subject($subject)
-                    ->with([ 'message' => $this->data['message'] ]);
-        // return $this->from('intranet@hitachi-hitt.com')->view('welcome');
+                    ->with([
+                        'name' => 'New Mailtrap User',
+                        'link' => 'https://mailtrap.io/inboxes'
+                    ]);
     }
 }
